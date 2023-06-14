@@ -1,4 +1,5 @@
 
+import Cart from "../cart/Cart";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
                     :                    
                     <Button  type="button" onClick={()=>userCtx.onLogout()}>Log out</Button>
                 } */}
-                {/* <Cart/> */}
+                <Cart/>
             </section>
         </div>
      );

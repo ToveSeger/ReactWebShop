@@ -1,0 +1,40 @@
+@import "../../shared/base.scss";
+
+.cartIcon{
+    width:5rem;
+    color:white;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+
+.cartContainer{
+    margin-top:1rem;
+    .emptyCart{
+        text-align: center;
+        margin:2rem 0 4rem 0;
+    }
+    .cartItem{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .leftItemPart{
+            display: flex;
+            gap:1rem;
+        }
+        border-bottom:1px solid $detail-light-gray;
+    }
+    
+    .cartTotal{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    a{
+        text-decoration: none;
+        color:black;
+        display:flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+    }
+}

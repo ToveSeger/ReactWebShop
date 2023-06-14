@@ -1,0 +1,43 @@
+@import "../../shared/base.scss";
+
+.modal{
+    position: fixed;
+    z-index: 1;
+    max-width: 80vw;
+    max-height:50vh;
+    min-width: 20%;
+    min-height: 20%;
+    background-color: white;
+    border-radius: $rounded-corners;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    top:30%;
+    left:50%;
+    transform: translateX(-50%);
+    padding:2rem;
+
+    .title{
+        font-size: 2rem;
+    }
+
+    .button{
+        position:absolute;
+        right:1rem;
+        top:1rem;
+        border:none;
+        background-color:white;
+        width:1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $txt-label;
+        padding:0.5rem;
+        
+    }
+}
+
+.backdrop{
+    height:100%;
+    width:100vw;
+    background-color: rgba(69, 68, 68, 0.478);
+    position: fixed;
+}

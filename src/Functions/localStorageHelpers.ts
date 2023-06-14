@@ -43,6 +43,7 @@ export const addProduct=(prod:ICartProduct)=>{
     else{
         addToExistingProduct(prod);
     }
+    setTotalItemsInCart();
 }
 
 export const removeProduct=(prod:ICartProduct)=>{
@@ -53,6 +54,7 @@ export const removeProduct=(prod:ICartProduct)=>{
     else{
         removeExistingProduct(prod);
     }
+    setTotalItemsInCart();
 }
 
 
@@ -77,3 +79,18 @@ export const removeExistingProduct=(product:ICartProduct)=>{
     const updatedProducts=getCartProducts().filter((prod:ICartProduct)=>prod.Id!==product.Id);
     localStorage.setItem("cartProducts", JSON.stringify(updatedProducts))  
 }
+
+export const setTotalItemsInCart=()=>{
+    const totalAmountOfProdsInCart=getCartProducts().reduce((currentNo:number, prod:ICartProduct)=>{
+        return currentNo + prod.Amount
+    },0)
+
+    localStorage.setItem("totalCartNo", totalAmountOfProdsInCart.toString())
+}
+
+export const getTotalItemsInCart=()=>{
+    console.log("getting total")
+    setTotalItemsInCart();
+    return localStorage.getItem("totalCartNo")
+}
+
