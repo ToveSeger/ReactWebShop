@@ -1,0 +1,50 @@
+[
+    {
+        "Id":"c374cb61-3b20-44c4-a6c7-8e169dbf171c",
+        "Name":"Shampoo brittle hair",
+        "Price":2.99,
+        "ImgSource":"https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNoYW1wb298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "ImgAltText":"Shampoo/conditioner bottle on white background with water splash",
+        "Amount":0
+    },
+    {
+        "Id":"d6755e53-0afa-4541-b2d5-29eb6adc2f9f",
+        "Name":"Conditioner brittle hair",
+        "Price":2.99,
+        "ImgSource":"https://images.unsplash.com/photo-1556227834-09f1de7a7d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNoYW1wb298ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "ImgAltText":"Shampoo/conditioner bottle on white background with water splash",
+        "Amount":0
+    },
+    {
+        "Id":"5b5498f9-3df0-4e03-9de7-3b3433e89b2e",
+        "Name":"Shampoo colored hair",
+        "Price":2.99,
+        "ImgSource":"https://images.unsplash.com/photo-1630082900894-edbd503588f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "ImgAltText":"Shampoo and conditioner bottles on a podium with extensions hanging down",
+        "Amount":0
+    },
+    {
+        "Id":"2f58070d-4a00-4606-b485-c2f17ad56a4a",
+        "Name":"Conditioner colored hair",
+        "Price":2.99,
+        "ImgSource":"https://images.unsplash.com/photo-1630082900894-edbd503588f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "ImgAltText":"Shampoo and conditioner bottles on a podium with extensions hanging down",
+        "Amount":0
+    },
+    {
+        "Id":"6dcaf2ee-8418-4890-9041-94f641c24e46",
+        "Name":"Perfume lemon splash",
+        "Price":14.99,
+        "ImgSource":"https://images.unsplash.com/photo-1588018025171-0581d0189080?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlcmZ1bWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "ImgAltText":"Perfume bottle next to a book stack",
+        "Amount":0
+    },
+    {
+        "Id":"d4bfeb1d-2838-4ab8-abc5-3130de800ce7",
+        "Name":"Perfume jasmine mist",
+        "Price":14.99,
+        "ImgSource":"https://images.unsplash.com/photo-1589493676751-8f4a014d95e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "ImgAltText":"Perfume bottle on a marble surface with flower decorations",
+        "Amount":0
+    }
+]

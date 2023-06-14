@@ -1,0 +1,15 @@
+.productCard{
+    width: calc(15rem + 8vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .imgWrapper{
+        width: calc(12rem + 8vw);
+        max-width: 100%;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}

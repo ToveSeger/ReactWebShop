@@ -1,0 +1,21 @@
+  @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@600&family=Roboto&display=swap');
+
+$base-font:'Roboto', sans-serif;
+$logo-font:'Prompt', sans-serif;
+
+$rounded-corners:5px;
+
+$bg-btn-light:rgb(247, 245, 245);
+$bg-orange:rgb(214, 131, 29);
+$detail-light-gray:rgb(186, 184, 183);
+
+
+//Sizes
+$txt-xxl:clamp(24px, calc(4vw + 16px), calc(7vw + 16px));
+$txt-xl: clamp(20px, calc(2.5vw + 14px), calc(4vw + 14px));
+$txt-l: clamp(1.5rem, calc(2.5vw - 4px), 6rem);
+$txt-m: clamp(1rem, calc(2vw - 4px), 4rem);
+$txt-article:clamp(12px, 16px, 20px);
+$txt-s:clamp(10px, 14px, 16px);
+$txt-logoText:clamp(14px, 1.2vw, 24px);
+$txt-label:clamp(16px, 20px, 28px);

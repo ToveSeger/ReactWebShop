@@ -1,0 +1,79 @@
+import { ICartProduct } from "../interfaces/ICartProduct";
+
+export const getCartProducts=()=>{
+    const cartProducts:string|null=localStorage.getItem("cartProducts");
+    let storedProducts:ICartProduct[];
+    if (cartProducts){
+        storedProducts = [...JSON.parse(cartProducts)];
+    }
+    else{
+        storedProducts=[];
+    }
+    return storedProducts;
+}
+
+
+const getProdIndex=(product:ICartProduct)=>{
+    let existingCartProdIndex;
+    existingCartProdIndex=getCartProducts().findIndex(
+        (prod:ICartProduct)=>prod.Id===product.Id
+    );
+
+    return existingCartProdIndex;
+}
+
+export const getProduct=(prod:ICartProduct)=>{
+    const product=getCartProducts()[getProdIndex(prod)];
+    return product;
+}
+
+export const checkIfProductExistsInCart=(prod:ICartProduct)=>{
+    const prodIndex=getProdIndex(prod);
+    let prodExists;
+    prodIndex===-1?prodExists=false:prodExists=true;
+    return prodExists;
+} 
+
+export const addProduct=(prod:ICartProduct)=>{
+    const prodIndex=getProdIndex(prod);
+    console.log(prod)
+    if(prodIndex===-1){
+        addNonExistingProduct(prod);
+    }
+    else{
+        addToExistingProduct(prod);
+    }
+}
+
+export const removeProduct=(prod:ICartProduct)=>{
+    console.log(prod)
+    if(prod.Amount){
+        subtractFromExistingProduct(prod);
+    }
+    else{
+        removeExistingProduct(prod);
+    }
+}
+
+
+export const addNonExistingProduct=(prod:ICartProduct)=>{
+    const updatedProducts=getCartProducts().concat(prod);
+    localStorage.setItem("cartProducts", JSON.stringify(updatedProducts))
+}
+
+export const addToExistingProduct=(prod:ICartProduct)=>{
+    const updatedProducts=[...getCartProducts()];
+    updatedProducts[getProdIndex(prod)]=prod;
+    localStorage.setItem("cartProducts", JSON.stringify(updatedProducts))
+}
+
+export const subtractFromExistingProduct=(prod:ICartProduct)=>{
+    const updatedProducts=[...getCartProducts()];
+    updatedProducts[getProdIndex(prod)]=prod;
+    localStorage.setItem("cartProducts", JSON.stringify(updatedProducts))
+}
+
+export const removeExistingProduct=(product:ICartProduct)=>{
+    const updatedProducts=getCartProducts().filter((prod:ICartProduct)=>prod.Id!==product.Id);
+    localStorage.setItem("cartProducts", JSON.stringify(updatedProducts))  
+}
