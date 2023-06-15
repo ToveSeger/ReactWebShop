@@ -1,0 +1,55 @@
+@import "../../shared/base.scss";
+
+.footer{
+    background-color: black;
+    color:white;
+    min-height:10rem;
+    font-size: $txt-s;
+    
+    .contentContainer{
+        padding:2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap:4rem;
+        align-items: center;
+        justify-content: center;
+
+        .companyDescription{
+            max-width:15rem;
+            .companyName{
+                font-size: $txt-article;
+                margin:0;
+                display: flex;
+                gap:0.1rem;
+                align-items: center;
+            }
+        }
+    
+        .address, .contact{
+            display: flex;
+            flex-direction: column;
+
+            p{
+                margin:0.1rem;
+            }
+        }
+    
+        .footerLogos{
+            margin-top: 1rem;;
+            font-size: 24px;
+            display: flex;
+            gap:1rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .contentContainer{
+        width:75%;
+        margin:0 auto;
+        flex-direction: column;
+        gap: 1rem !important;
+        align-items: flex-start !important;
+    }
+}

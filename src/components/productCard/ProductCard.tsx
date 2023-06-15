@@ -7,17 +7,8 @@ import Button from "../UI/button/Button";
 import Card from "../UI/card/Card";
 
 const ProductCard = (props:IProductCard) => {
-    // const [prodAmount, setProdAmount]=useState(props.Product.Amount);
     const initialProdAmount= checkIfProductExistsInCart(props.Product)?getProduct(props.Product).Amount:0;
     const [prodAmount, setProdAmount]=useState(initialProdAmount);
-
-
-    
-
-    // useEffect(()=>{
-    //     const prod=getProduct(props.Product)
-    //     console.log(prod)
-    // },[prodAmount])
 
     const updateProd=(operator:string)=>{
        if(operator==="+"){

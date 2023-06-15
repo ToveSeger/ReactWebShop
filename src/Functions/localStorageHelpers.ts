@@ -97,3 +97,18 @@ export const getTotalItemsInCart=()=>{
     const totalItemsNo=totalItems?+totalItems:0;
     return totalItemsNo;
 }
+
+export const cartTotal=()=>{
+    let total=0;
+    if (getCartProducts().length<0||getCartProducts()===undefined) return;
+    getCartProducts().forEach((prod:ICartProduct) => {
+        if(prod.Amount===undefined){
+            total=999;
+        }
+        else{
+            const itemTotal=prod.Amount * prod.Price
+            total=itemTotal + total;
+        }
+    });
+    return total.toFixed(2);
+}

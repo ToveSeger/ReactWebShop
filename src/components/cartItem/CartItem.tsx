@@ -51,12 +51,6 @@ const CartItem = (props:ICartItem) => {
              setTotalCartNo(getTotalItemsInCart())
          },[prodAmount])
 
-    //  const getProdAmount=(prod:ICartProduct)=>{
-    //     const initialAmount=checkIfProductExistsInCart(prod)?getProduct(prod).Amount:0;
-    //     setProdAmount(initialAmount)
-    //     return initialAmount;
-    //  }
-
     return ( 
         <>
         {prodAmount>0&&

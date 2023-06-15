@@ -1,7 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { ICartProduct } from "../../interfaces/ICartProduct";
-import { addProduct, checkIfProductExistsInCart, getCartProducts, getProduct, removeProduct } from "../../Functions/localStorageHelpers";
-import CartItem from "../../components/cartItem/CartItem";
+import {getCartProducts} from "../../Functions/localStorageHelpers";
 import styles from "./Cart.module.scss";
 import CartList from "../../components/cartList/CartList";
 
