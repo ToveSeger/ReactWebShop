@@ -21,7 +21,7 @@ const CartList = (props:ICartList) => {
             <p>${cartTotal()}</p>
         </section>
     </div>
-            :<p>No products yet</p>
+            :<p className={styles.emptyCart}>No products yet</p>//TODO: Gör så att denna tar upp hela höjden
     }
      </> );
 }
