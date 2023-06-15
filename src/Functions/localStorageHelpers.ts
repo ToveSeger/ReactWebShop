@@ -36,7 +36,6 @@ export const checkIfProductExistsInCart=(prod:ICartProduct)=>{
 
 export const addProduct=(prod:ICartProduct)=>{
     const prodIndex=getProdIndex(prod);
-    console.log(prod)
     if(prodIndex===-1){
         addNonExistingProduct(prod);
     }
@@ -48,7 +47,7 @@ export const addProduct=(prod:ICartProduct)=>{
 
 export const removeProduct=(prod:ICartProduct)=>{
     console.log(prod)
-    if(prod.Amount){
+    if(prod.Amount>0){
         subtractFromExistingProduct(prod);
     }
     else{
@@ -89,8 +88,8 @@ export const setTotalItemsInCart=()=>{
 }
 
 export const getTotalItemsInCart=()=>{
-    console.log("getting total")
     setTotalItemsInCart();
-    return localStorage.getItem("totalCartNo")
+    const totalItems=localStorage.getItem("totalCartNo");
+    const totalItemsNo=totalItems?+totalItems:0;
+    return totalItemsNo;
 }
-

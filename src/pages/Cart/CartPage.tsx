@@ -3,6 +3,7 @@ import { ICartProduct } from "../../interfaces/ICartProduct";
 import { addProduct, checkIfProductExistsInCart, getCartProducts, getProduct, removeProduct } from "../../Functions/localStorageHelpers";
 import CartItem from "../../components/cartItem/CartItem";
 import styles from "./Cart.module.scss";
+import CartList from "../../components/cartList/CartList";
 
 const CartPage = () => {
     // const products:string|null=localStorage.getItem("cartProducts");
@@ -20,25 +21,10 @@ const CartPage = () => {
         // const [cartProducts, setCartProducts]=useState(storedProducts());
         const products=getCartProducts();  
         
-        
-
-   
-
-
- 
     return ( 
-        <>
-        {products?
-            <ul className={styles.cartList}>
-                {products.map((prod:ICartProduct)=>
-                    <li  key={prod.Id}>
-                    <CartItem Product={prod}/>
-                </li>
-            )}
-            </ul>
-        :<p>No products</p>
-     }
-     </>
+        <div className={styles.cartList}>
+                <CartList Products={products}/>
+        </div>
     );
 }
  

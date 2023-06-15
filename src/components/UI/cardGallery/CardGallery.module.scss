@@ -1,0 +1,11 @@
+@import "../../../shared/base.scss"; 
+
+.cardGallery{
+    max-width:90%;
+    padding:1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+    justify-content: center;
+    margin:0 auto;
+}

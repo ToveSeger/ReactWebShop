@@ -1,8 +1,12 @@
-import { useState } from "react";
-import { addProduct, checkIfProductExistsInCart, getProduct, removeProduct } from "../../Functions/localStorageHelpers";
+import { useEffect, useState } from "react";
+import { addProduct, checkIfProductExistsInCart, getProduct, getTotalItemsInCart, removeProduct } from "../../Functions/localStorageHelpers";
 import { ICartItem } from "../../interfaces/ICartItem";
 import { ICartProduct } from "../../interfaces/ICartProduct";
 import styles from "./CartItem.module.scss";
+import Card from "../UI/card/Card";
+import Button from "../UI/button/Button";
+import {CiTrash} from "react-icons/ci";
+
 
 const CartItem = (props:ICartItem) => {
     
@@ -26,11 +30,26 @@ const CartItem = (props:ICartItem) => {
          }
          removeProduct(updatedProd)
         }
-        // getProdAmount(prod)
+     }
+
+     const removeProd=()=>{
+        setProdAmount(0)
+        const updatedProd={
+            ...props.Product,
+            Amount:0
+        }
+        removeProduct(updatedProd);
      }
 
      
-      const [prodAmount, setProdAmount]=useState(props.Product.Amount);
+     const [prodAmount, setProdAmount]=useState(props.Product.Amount);
+     const [totalCartNo, setTotalCartNo]=useState(getTotalItemsInCart());
+     
+         useEffect(()=>{
+             console.log("i useeeffect")
+             setProdAmount(prodAmount)
+             setTotalCartNo(getTotalItemsInCart())
+         },[prodAmount])
 
     //  const getProdAmount=(prod:ICartProduct)=>{
     //     const initialAmount=checkIfProductExistsInCart(prod)?getProduct(prod).Amount:0;
@@ -39,12 +58,32 @@ const CartItem = (props:ICartItem) => {
     //  }
 
     return ( 
-        <div>
-            <p>{props.Product.Name}</p>
-            <p>{prodAmount}</p>
-            <button  type="button" onClick={()=>updateProd(props.Product, "-")}>-</button>
-            <button  type="button" onClick={()=>updateProd(props.Product, "+")}>+</button>
-        </div> 
+        <>
+        {prodAmount>0&&
+            <Card className={styles.cartItem}>
+                 <div className={styles.imgWrapper}>
+                    <img src={props.Product.ImgSource} alt={props.Product.ImgAltText} />
+                </div>
+                <div className={styles.itemControls}>
+                    <div>
+                    <section className={styles.flexContainer}>
+                        <p>{prodAmount}</p>
+                        <p>x</p>
+                    <p>{props.Product.Name}</p>
+                    </section>
+                    <section className={styles.flexContainer}>
+                        <Button type="button" onClick={()=>updateProd(props.Product, "-")}>-</Button>
+                        <Button type="button" onClick={()=>updateProd(props.Product, "+")}>+</Button>
+                    </section>
+                    </div>
+                    <CiTrash className={styles.trash} onClick={()=>removeProd()}/>
+                </div>
+            </Card> 
+        }
+        {totalCartNo===0&&
+            <p>No products yet</p>
+        }
+        </>
     );
 }
  

@@ -1,0 +1,7 @@
+@import "../../../shared/base.scss";
+
+.card{
+    border:1px solid gray;
+    border-radius: $rounded-corners;
+    padding:1rem;
+}

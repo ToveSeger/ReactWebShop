@@ -1,16 +1,18 @@
-import {useEffect, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import styles from "./Cart.module.scss";
 import { Modal } from "../modal/Modal";
 import {FaShoppingCart} from "react-icons/fa";
 import { ICartProduct } from "../../interfaces/ICartProduct";
 import { getCartProducts, getTotalItemsInCart } from "../../Functions/localStorageHelpers";
+import CartContext from "../../store/cart-context";
 
 const Cart = () => {
 
     const products=getCartProducts();
     const [modalVisibility, setModalVisibility]=useState(false);
     const [cartTotalProdAmount, setCartTotalProdAmount]=useState(getTotalItemsInCart());
-
+    const cartCtx=useContext(CartContext);
+    
     const toggleModalVisibility=()=>{
         modalVisibility?setModalVisibility(false):setModalVisibility(true);
     }
@@ -40,16 +42,15 @@ const Cart = () => {
       }      
 
       useEffect(()=>{
-        console.log("I use effect")
-
-    
-      },[])
+        console.log(cartCtx.totalAmount)
+      },[cartCtx.totalAmount])
 
     return ( 
         
     <div className={styles.cartIcon} onClick={()=>toggleModalVisibility()}>
         <FaShoppingCart/>
-        <p>{cartTotalProdAmount}</p>
+        {/* <p>{cartTotalProdAmount}</p> */}
+        <p>{cartCtx.totalAmount}</p>
         {modalVisibility&&
             <Modal onDismiss={()=>toggleModalVisibility()}>
                 <div className={styles.cartContainer}>
