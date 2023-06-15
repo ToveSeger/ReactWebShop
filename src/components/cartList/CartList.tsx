@@ -8,7 +8,7 @@ const CartList = (props:ICartList) => {
 
     return (   <>
     {props.Products.length>0?
-    <>
+    <div className={styles.cartListWrapper}>
         <ul className={styles.cartList}>
             {props.Products.map((prod:ICartProduct)=>
                 <li  key={prod.Id}>
@@ -20,7 +20,7 @@ const CartList = (props:ICartList) => {
             <p className={styles.bold}>Cart total:</p>
             <p>${cartTotal()}</p>
         </section>
-    </>
+    </div>
             :<p>No products yet</p>
     }
      </> );

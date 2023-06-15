@@ -1,19 +1,22 @@
-.cartList{
-    max-width: 100%;
-    list-style: none;
-    padding:0;
-    margin:1rem;
-    li{
-        margin:1rem 0;
+.cartListWrapper{
+    height:100%;
+    .cartList{
+        max-width: 100%;
+        list-style: none;
+        padding:0;
+        margin:1rem;
+        li{
+            margin:1rem 0;
+        }
     }
-}
-.cartTotal{
-    max-width:calc(800px + 10vw);
-    display:flex;
-    justify-content: flex-end;
-    gap:1rem;
-
-    .bold{
-        font-weight: 600;
+    .cartTotal{
+        max-width:calc(800px + 10vw);
+        display:flex;
+        justify-content: flex-end;
+        gap:1rem;
+    
+        .bold{
+            font-weight: 600;
+        }
     }
 }
