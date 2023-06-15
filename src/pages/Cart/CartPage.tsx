@@ -7,7 +7,9 @@ const CartPage = () => {
 const products=getCartProducts();  
         
     return ( 
-        <CartList Products={products}/>
+        <div className={styles.cartPage}>
+            <CartList Products={products}/>
+        </div>
     );
 }
  
