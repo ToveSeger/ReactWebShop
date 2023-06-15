@@ -77,7 +77,7 @@ const CartItem = (props:ICartItem) => {
             </div> 
         }
         {totalCartNo===0&&
-            <p>No products yet</p>
+            <p className={styles.emptyCart}>No products yet</p>
         }
         </>
     );
