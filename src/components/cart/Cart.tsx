@@ -49,12 +49,11 @@ const Cart = () => {
         
     <div className={styles.cartIcon} onClick={()=>toggleModalVisibility()}>
         <FaShoppingCart/>
-        {/* <p>{cartTotalProdAmount}</p> */}
-        <p>{cartCtx.totalAmount}</p>
+        <p>{cartTotalProdAmount}</p>
         {modalVisibility&&
             <Modal onDismiss={()=>toggleModalVisibility()}>
                 <div className={styles.cartContainer}>
-                    {products?
+                    {products.length>0?
                     <div>
                         {products.map((prod:ICartProduct)=>
                         <div className={styles.cartItem}>
@@ -69,8 +68,8 @@ const Cart = () => {
                     </div>
                     :<p className={styles.emptyCart}>No products yet</p>
                     }
-                <p className={styles.cartTotal}>Cart total: ${cartTotal()}</p>
-                {products&&
+                    <p className={styles.cartTotal}>Cart total: ${cartTotal()}</p>
+                {products.length>0&&
                     <a href={"/cart"}>Show full cart</a>
                 }
                 </div>

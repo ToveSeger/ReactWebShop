@@ -60,25 +60,27 @@ const CartItem = (props:ICartItem) => {
     return ( 
         <>
         {prodAmount>0&&
-            <Card className={styles.cartItem}>
-                 <div className={styles.imgWrapper}>
-                    <img src={props.Product.ImgSource} alt={props.Product.ImgAltText} />
-                </div>
-                <div className={styles.itemControls}>
-                    <div>
-                    <section className={styles.flexContainer}>
-                        <p>{prodAmount}</p>
-                        <p>x</p>
-                    <p>{props.Product.Name}</p>
-                    </section>
-                    <section className={styles.flexContainer}>
-                        <Button type="button" onClick={()=>updateProd(props.Product, "-")}>-</Button>
-                        <Button type="button" onClick={()=>updateProd(props.Product, "+")}>+</Button>
-                    </section>
+            <div className={styles.cartItem}>
+                <div className={styles.cartItemContentWrapper}>
+                    <div className={styles.imgWrapper}>
+                        <img src={props.Product.ImgSource} alt={props.Product.ImgAltText} />
                     </div>
-                    <CiTrash className={styles.trash} onClick={()=>removeProd()}/>
+                    <div className={styles.itemControls}>
+                        <div>
+                        <section className={styles.flexContainer}>
+                            <p>{prodAmount}</p>
+                            <p>x</p>
+                        <p>{props.Product.Name}</p>
+                        </section>
+                        <section className={styles.flexContainerBtn}>
+                            <Button type="button" onClick={()=>updateProd(props.Product, "-")}>-</Button>
+                            <Button type="button" onClick={()=>updateProd(props.Product, "+")}>+</Button>
+                        </section>
+                        </div>
+                        <CiTrash className={styles.trash} onClick={()=>removeProd()}/>
+                    </div>
                 </div>
-            </Card> 
+            </div> 
         }
         {totalCartNo===0&&
             <p>No products yet</p>

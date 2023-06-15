@@ -1,14 +1,13 @@
 import CardGallery from "../../components/UI/cardGallery/CardGallery";
-import ProductCard from "../../components/productCard/ProductCard";
-import cartProducts from "../../data/CartProducts.json";
+import { TextBlock } from "../../components/UI/textBlock/TextBlock";
+import styles from "./Home.module.scss";
+import text from "../../data/DummyText.json";
 
 const HomePage = () => {
     return ( 
         <>
-             {/* {cartProducts.map((prod=>
-                <ProductCard key={prod.Id} Product={prod}/>
-            ))} */}
-            <CardGallery/>
+            <TextBlock className={styles.textBlock} Heading={text.DummyHeading1} Text={text.DummyText100}/>
+            <CardGallery />
         </>
      );
 }

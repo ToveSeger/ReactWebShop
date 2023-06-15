@@ -1,0 +1,20 @@
+@import "../../../shared/base.scss";
+
+.textBlock{
+    display: flex;
+    gap:clamp(1rem, calc(1.8vw - 4px), 2.5rem);
+    max-width: 60vw;
+    flex-wrap: wrap;
+
+    .heading{
+        margin:0.5rem;
+        font-size:$txt-xl;
+        max-width: 30rem;
+    }
+    .paragraph{
+        margin:0.5rem;
+        font-size: $txt-article;
+        width:40rem;
+    }
+
+}

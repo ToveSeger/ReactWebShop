@@ -1,6 +1,10 @@
 import { ICartProduct } from "../interfaces/ICartProduct";
+import {useContext} from "react";
+import CartContext from "../store/cart-context";
 
 export const getCartProducts=()=>{
+
+    
     const cartProducts:string|null=localStorage.getItem("cartProducts");
     let storedProducts:ICartProduct[];
     if (cartProducts){
