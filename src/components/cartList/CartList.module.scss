@@ -2,36 +2,38 @@
 .cartListWrapper{
     min-height:100vh;
     max-width:calc(800px + 10vw);
-    position: relative;
     margin-bottom:2rem;
-
-    .cartList{
-        max-width: 100%;
-        list-style: none;
-        padding:0;
-        margin:1rem;
-        li{
-            margin:1rem 0;
+    padding:1rem;
+        .cartList{
+            max-width: 100%;
+            list-style: none;
+            padding:0;
+            margin:1rem;
+            li{
+                margin:1rem 0;
+            }
         }
-    }
-    .cartTotal{
-        display:flex;
-        justify-content: flex-end;
-        gap:1rem;
+        .cartTotal{
+            display:flex;
+            justify-content: flex-end;
+            gap:1rem;
+        
+            .bold{
+                font-weight: 600;
+            }
+        }
     
-        .bold{
-            font-weight: 600;
+        .flexContainer{
+            display: flex;
+            justify-content: flex-end;
+            .checkoutLink{
+                text-decoration: none;
+                border:1px solid $detail-light-gray;
+                border-radius: $rounded-corners;
+                padding:0.5rem; 
+            }
         }
-    }
 
-    .checkoutLink{
-        text-decoration: none;
-        position: absolute;
-        right:0;
-        border:1px solid $detail-light-gray;
-        border-radius: $rounded-corners;
-        padding:0.5rem;  
-    }
 }
 
 .emptyCart{

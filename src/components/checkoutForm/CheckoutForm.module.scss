@@ -14,13 +14,15 @@
         // margin:3rem auto;
         display:flex;
         flex-direction: column;
-        width:calc(800px - 20vw);
+        width:clamp(300px, calc(400px + 10vw), calc(400px + 10vw));
+        max-width: 100%;
         height: fit-content;
         gap:1rem;
         padding:2rem 2rem 4rem 2rem;
         border: 1px solid $detail-light-gray;
         border-radius: $rounded-corners;
         color:black;
+        margin:1rem;
     
         .formItemContainer{
             margin:0 auto;

@@ -10,19 +10,23 @@ const CartList = (props:ICartList) => {
     return (   <>
     {props.Products.length>0?
     <div className={styles.cartListWrapper}>
-        <ul className={styles.cartList}>
-            {props.Products.map((prod:ICartProduct)=>
-                <li  key={prod.Id}>
-                <CartItem Product={prod}/>
-            </li>
-        )}
-        </ul>
-        <section className={styles.cartTotal}>
-            <p className={styles.bold}>Cart total:</p>
-            <p>${cartTotal()}</p>
+        <div className={styles.contentContainer}>
+            <ul className={styles.cartList}>
+                {props.Products.map((prod:ICartProduct)=>
+                    <li  key={prod.Id}>
+                    <CartItem Product={prod}/>
+                </li>
+            )}
+            </ul>
+            <section className={styles.cartTotal}>
+                <p className={styles.bold}>Cart total:</p>
+                <p>${cartTotal()}</p>
 
-        </section>
+            </section>
+        </div>
+        <section className={styles.flexContainer}>
             <a className={styles.checkoutLink} href="/checkout">Go to checkout</a>
+        </section>
     </div>
             :<p className={styles.emptyCart}>No products yet</p>
     }
