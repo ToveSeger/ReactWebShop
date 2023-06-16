@@ -8,6 +8,11 @@
 
     .prodList{
         width:fit-content;
+        .cartTotal{
+            font-weight: 600;
+            display: flex;
+            justify-content: flex-end;
+        }
     }
     .form{
         font-size:$txt-label;

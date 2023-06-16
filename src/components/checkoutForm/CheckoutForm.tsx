@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import styles from "./CheckoutForm.module.scss";
 import { Modal } from "../modal/Modal";
 import Button from "../UI/button/Button";
-import { emptyCartProducts, getCartProducts } from "../../Functions/localStorageHelpers";
+import { cartTotal, emptyCartProducts, getCartProducts } from "../../Functions/localStorageHelpers";
 import CartProvider from "../../store/CartProvider";
 import CartContext from "../../store/cart-context";
 import { useNavigate } from "react-router-dom";
@@ -122,6 +122,7 @@ export const CheckoutForm = () => {
           </li>
           )}
         </ul>
+        <p className={styles.cartTotal}>Cart total: ${cartTotal()}</p>
       </section>
       }
     <h3>Shipping information</h3>
