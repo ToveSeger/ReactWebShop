@@ -1,5 +1,10 @@
+@import "../../shared/base.scss";
 .cartListWrapper{
     min-height:100vh;
+    max-width:calc(800px + 10vw);
+    position: relative;
+    margin-bottom:2rem;
+
     .cartList{
         max-width: 100%;
         list-style: none;
@@ -10,7 +15,6 @@
         }
     }
     .cartTotal{
-        max-width:calc(800px + 10vw);
         display:flex;
         justify-content: flex-end;
         gap:1rem;
@@ -18,6 +22,15 @@
         .bold{
             font-weight: 600;
         }
+    }
+
+    .checkoutLink{
+        text-decoration: none;
+        position: absolute;
+        right:0;
+        border:1px solid $detail-light-gray;
+        border-radius: $rounded-corners;
+        padding:0.5rem;  
     }
 }
 

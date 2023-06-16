@@ -1,0 +1,29 @@
+@import "../../shared/base.scss";
+
+.thankYouContainer{
+    height:100%;
+    
+    .contentContainer{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+
+        h1{
+            font-size: $txt-l;
+        }
+        p{
+            font-size: $txt-s;
+        }
+
+    .imgContainer{
+        width:calc(18rem + 10vw);
+        margin:2rem;
+
+        img{
+            max-width: 100%;
+        }
+    }
+
+    }
+}

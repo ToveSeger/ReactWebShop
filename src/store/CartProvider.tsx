@@ -16,6 +16,7 @@ const CartProvider=(props: any)=>{
 
     const cartContext={
         totalAmount:getTotalItemsInCart(),
+        checkedOutItems:[],
         addToTotalAmount:addToTotalAmount
     }
 

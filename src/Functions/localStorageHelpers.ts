@@ -112,3 +112,7 @@ export const cartTotal=()=>{
     });
     return total.toFixed(2);
 }
+
+export const emptyCartProducts=()=>{
+    localStorage.removeItem("cartProducts");
+}
