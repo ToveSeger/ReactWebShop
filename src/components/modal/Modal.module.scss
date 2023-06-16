@@ -3,10 +3,7 @@
 .modal{
     position: fixed;
     z-index: 1;
-    max-width: 80vw;
-    max-height:50vh;
-    min-width: 20%;
-    min-height: 20%;
+    width:calc(250px + 5vw);
     background-color: white;
     border-radius: $rounded-corners;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
